@@ -3,6 +3,7 @@ import os
 import pickle
 import string
 import nltk
+import requests
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 stopwords_En = nltk.corpus.stopwords.words('english')
@@ -25,17 +26,15 @@ def index():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    nom = request.form["content"]
     real_news_img = os.path.join(app.config['UPLOAD_FOLDER'], 'Real_news.png')
     fake_news_img = os.path.join(app.config['UPLOAD_FOLDER'], 'Fake_news.png')
-    nom = "".join([word.lower() for word in nom if word not in string.punctuation])
-    tokens = word_tokenize(nom)
-    nom = " ".join([ps.stem(word) for word in tokens if word not in stopwords_En])
-    input = [nom]
-    prediction = model.predict(input)
-    if prediction == 1:
+    url = "https://fakers.azurewebsites.net/?news="
+    nom = request.form["content"]
+    reponse = requests.get(url + nom)
+    prediction = reponse.text
+    if prediction == '[1]':
         return render_template("index.html", user_image = fake_news_img)
-    if prediction == 0:
+    if prediction == '[0]':
         return render_template("index.html", user_image = real_news_img)
     else:
         pass

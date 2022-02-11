@@ -1,4 +1,4 @@
-flask
-gunicorn
-scikit-learn
-nltk
+Flask==1.1.2
+nltk==3.6.5
+requests==2.27.1
+scikit_learn==1.0.2
