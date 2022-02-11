@@ -1,0 +1,91 @@
+* { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
+
+html { width: 100%; height:100%; overflow:scroll;}
+
+body { 
+	width: 100%;
+	height:100%;
+	font-family: 'Open Sans', sans-serif;
+	background: #FDF6E4;
+	color: #1F2023;
+	font-size: 18px;
+	text-align:center;
+	letter-spacing:1.2px;
+
+}
+.login { 
+	position: absolute;
+	top: 40%;
+	left: 40%;
+	margin: -250px 0 0 -200px;
+	width:600px;
+	height:1000px;
+}
+
+@import url('https://rsms.me/inter/inter.css');
+
+:root {
+  --color-light: white;
+  --color-dark: #212121;
+  --color-signal: #fab700;
+  
+  --color-background: var(--color-light);
+  --color-text: var(--color-dark);
+  --color-accent: var(--color-signal);
+  
+  --size-bezel: .5rem;
+  --size-radius: 4px;
+  
+  line-height: 1.4;
+  
+  font-family: 'Inter', sans-serif;
+  font-size: calc(.6rem + .4vw);
+  color: var(--color-text);
+  background: var(--color-background);
+  font-weight: 300;
+  padding: 0 calc(var(--size-bezel) * 3);
+}
+
+h1, h2, h3 {
+  font-weight: 900;
+}
+
+.card {
+  background: var(--color-background);
+  padding: calc(4 * var(--size-bezel));
+  margin-top: calc(4 * var(--size-bezel));
+  border-radius: var(--size-radius);
+  border: 3px solid var(--color-shadow, currentColor);
+  box-shadow: .5rem .5rem 0 var(--color-shadow, currentColor);
+}
+
+.input__field {
+  border: 3px solid currentColor;
+  float: left;
+  padding: 20px 10px;
+  color: currentColor;
+  background: transparent;
+  border-radius: var(--size-radius);
+  margin: 1em;
+  margin-top:0px;
+}
+
+form {
+  display: inline;
+  margin: 1em;
+}
+
+button {
+  color: currentColor;
+  padding: 14px 10px;
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--size-radius);
+  font-weight: 900;
+  margin-top:15px;
+}
+
+
+.hidden {
+  display: none;
+}

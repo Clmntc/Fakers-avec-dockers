@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>Fakers</title>
+    <link rel="icon" href="Favicon.png">
+		<link rel ="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="login">  
+            <div class="card">
+              <img src="https://raw.githubusercontent.com/Clmntc/Fakers/master/Fakers.png" height="160px" width="440px" alt="Fakers"/>
+                <br><br>
+                <div class="button-group">
+                <form action="{{ url_for('predict')}}"method="post">
+                    <label class="input"><textarea name="content" class="input__field" type="text" placeholder="Entre ton texte ici"></textarea></label>
+                    <button>Fake or not ?</button>
+                    </form>
+                    <form action="{{ url_for('index')}}"method="get">
+                    <button>Reset</button>
+                    </form>
+                </div>
+          <br>
+          <img src="{{ user_image }}">
+          </div>
+          <p style="color:rgb(54, 54, 54);font-size:13px;"><dfn>Made by YAC Agency</dfn></p> 
+        </div>
+    </body>
+</html>
